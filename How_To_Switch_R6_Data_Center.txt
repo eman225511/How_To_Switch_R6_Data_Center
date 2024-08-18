@@ -1,0 +1,50 @@
+Selecting data centres manually in Rainbow Six Siege (PC)
+To find your data centre file:
+
+•  Close your game if it is currently running.
+•  Open the File Explorer.
+•  Navigate to C:\Users\<User>\Documents\My Games\Rainbow Six - Siege\UbisoftConnectID.
+UbisoftConnectID is a long string of letters and numbers unique to your Ubisoft account.
+You will see multiple folders if you have played on more than one account.
+•  Delete the folders and start the game from your account.
+You should now see a single folder for your account containing a default GameSettings.ini file.
+•  Right-click the GameSettings.ini file.
+•  Choose Open with and select Notepad.
+You will see a list of game settings.
+•  Scroll to the bottom of the document.
+You will see the following:
+ 
+[ONLINE]
+;DataCenterHint =>
+; default (ping based)
+; playfab/australiaeast
+; playfab/brazilsouth
+; playfab/centralus
+; playfab/eastasia
+; playfab/eastus
+; playfab/japaneast
+; playfab/northeurope
+; playfab/southafricanorth
+; playfab/southcentralus
+; playfab/southeastasia
+; playfab/uaenorth
+; playfab/westeurope
+; playfab/westus
+;
+DataCenterHint=default
+ 
+ 
+All lines with a semicolon in front are a list of the possible datacentre choices.
+
+The bottom line (DataCenterHint=default) is the selection currently set to default, which means the datacentre will be chosen automatically.
+ 
+To manually select your data centre:
+ 
+•  Change default selection to the datacentre of your choosing.
+For example: DataCenterHint=playfab/westeurope for West Europe or DataCenterHint=playfab/centralus for Central US.
+•  Save the file, then start the game.
+•  While in the game, press F10 on your keyboard or select the gear icon in the top-right corner.
+ 
+Below the options, you will see the currently selected data centre, your ping, and your NAT type.
+ 
+You can change your server again at any time by closing the game and changing the values as instructed above.
