@@ -1,0 +1,558 @@
+<style>
+body {
+    /* font-family: 'Open Sans', 'Helvetica Nue', sans-serif; */
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-weight: 300; /* You can choose 300, 400, 500, 700 depending on the weight you prefer */
+    font-size: 18px; /* Adjust size for readability */
+    line-height: 1.6; /* Improves readability */
+    /* background-color: #383d45; */
+    background-color: #161616;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: inherit; /* Inherit from body */
+    font-weight: inherit; /* Inherit from body, or set a specific weight if needed */
+}
+
+h1 {
+    font-size: 5em; /* Adjust this size as needed */
+    line-height: 2; /* Improves readability */
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+}
+
+h2 {
+    font-size: 2em; /* Adjust this size as needed */
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+h4 {
+    font-size: 1.2em; /* Adjust this size as needed */
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #353232;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index:1000;
+}
+
+
+.ping {
+    text-shadow: rgba(255, 255, 255, 0.4) 0px 8px 16px;
+}
+
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Control the maximum width of the main container */
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 8px 16px;
+    overflow: hidden;
+    margin: 30px;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    color: #000000;
+}
+
+.card a {
+    color: #000000;
+}
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #000000;
+    position: relative;
+}
+
+.card-content a {
+    color: #000000;
+}
+.card-content h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 0;
+    color: #000000;
+}
+
+.card-content p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #000000;
+}
+
+.card-content .card-bottom {
+    margin-top: auto;
+}
+
+.card-content a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card {
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card-content {
+        width: calc(100% - 100px);
+        padding: 5px;
+    }
+
+    .card-content h2 {
+        font-size: 18px;
+    }
+
+    .card-content p {
+        font-size: 10px;
+    }
+
+    .card-content .card-bottom {
+        font-size: 12px;
+    }
+
+    .header-right {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header-right a.nav-link {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    .title {
+        display: none;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .card-content {
+        padding: 10px;
+    }
+
+    nav a.nav-link {
+       /* margin-left: 40px; */
+        color: #ffffff;
+    }
+
+    .header-right {
+        width: 800px;
+        justify-content: space-between;
+    }
+
+    .header-right a {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1201px) {
+    .card-content {
+        padding: 10px;
+    }
+
+    nav a.nav-link {
+        /* margin-left: 40px; */
+        color: #ffffff;
+    }
+
+    .header-right {
+        width: 800px;
+        justify-content: space-between;
+    }
+
+    .header-right a {
+        flex: 1;
+        text-align: center;
+    }
+
+    main > .card {
+        max-width: calc(50% - 40px); /* Ensure max-width is consistent */
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main > .card {
+    /* flex: 1 1 450px;
+    max-width: 450px; */
+    flex: 1 1 calc(50% - 40px); /* 50% width minus margins, adjusted to fit two cards per row */
+    max-width: calc(50% - 40px);
+    margin: 10px; /* Space between cards */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+@media (max-width: 1200px) {
+    main > .card {
+        flex: 1 1 450px;
+        max-width: 450px;
+    }
+
+    .ping-test {
+        max-width: 100%; /* Adjust max-width for smaller screens */
+        padding: 10px; /* Add padding for better layout on smaller screens */
+    }    
+}
+
+@media (max-width: 600px) {
+    main > .card {
+        flex: 1 1 450px;
+        max-width: 450px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.ping-green {
+    color: green;
+}
+
+.ping-yellow {
+    color: yellow;
+}
+
+.ping-orange {
+    color: orange;
+}
+
+.ping-red {
+    color: red;
+}
+
+/* New Layout */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    /* margin: 20px; */
+    background-color: #383d45;
+    color: #ffffff;
+    padding: 60px;
+    min-height: 800px; /* Set minimum height */
+    /* border-radius: 8px; */
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+}
+
+.column h1, .column p {
+    margin: 20px 0;
+}
+
+.column h1 {
+    font-size: 24px;
+}
+
+.ping-list {
+    list-style: none;
+    padding: 0;
+}
+
+.column a {
+    color:rgb(134, 157, 201);
+}
+
+.column a:visited {
+    color:rgb(134, 157, 201) !important; /* Ensure visited links are also styled */
+}
+
+.ping-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.ping-time {
+    font-weight: bold;
+}
+
+/* Responsive adjustments for the new layout */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .column {
+        margin: 10px 0;
+    }
+
+    .header-right {
+        flex-direction: column; /* Stack menu items vertically on small screens */
+    }
+
+    nav a, .dropbtn {
+        width: 100%; /* Full width for touch-friendly UI */
+        box-sizing: border-box; /* Ensure padding and borders are included in width */
+    }
+
+    .dropbtn {
+        margin-bottom: 10px; /* Add space between dropdown and other links */
+    }
+
+    main > .card {
+        flex: 1 1 100%; /* Full width for each card on smaller screens */
+        max-width: 100%;
+    }
+
+    .ping-test {
+        padding: 5px; /* Adjust padding for even smaller screens */
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .column h1 {
+        font-size: 20px;
+    }
+
+    .ping-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ping-time {
+        margin-top: 5px;
+    }
+
+    .header-right {
+        flex-direction: column;
+    }
+
+    nav a, .dropbtn {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .dropdown-content a {
+        padding: 10px 15px; /* Ensure adequate padding */
+    }
+    
+    .ping-test {
+        padding: 2px; /* Minimal padding for very small screens */
+    }
+}
+
+#centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+a {
+    text-decoration: none;
+    color: #98a8c4; /* Same as .span-colored */
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #98a8c4; /* Same as .span-colored */
+}
+
+.ping-test{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 255px;
+    margin: 0 auto 20px; /* Center and add spacing below */
+    background-color: transparent; /* Or any color if needed */
+}
+</style>
+
+<div class="column" style="background-color: #000000;">
+	<div class="servers">
+		<h1 style="color: green; font-size: 40px; font-weight: bold;">R6 Game Servers</h1>
+		<h3><a href="https://www.ubisoft.com/en-us/help/rainbow-six-siege/article/selecting-data-centres-manually-in-rainbow-six-siege-pc/000060594">How To Switch Data Center's</a> | <a href="https://github.com/eman225511/How_To_Switch_R6_Data_Center/blob/main/How_To_Switch_R6_Data_Center.txt">(backup link)</a></h3>
+
+		<p style="font-weight: bold; font-size: 20px;">
+			<span>Best Server: <span id="bestName"></span></span>
+			<br>
+			<span>Ping: <span id="bestPing" class="ping-time ping"></span></span>
+			<br>
+			<button onclick="startPinging();">Force Reload Ping</button>
+		</p>
+		
+		<ul class="ping-list">
+			<li class="server" data-address="dynamodb.us-east-2.amazonaws.com">
+				<span>NA East : <span class="span-colored">( USA East )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+			<li class="server" data-address="dynamodb.us-east-1.amazonaws.com">
+				<span>NA Central : <span class="span-colored">( USA Central )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+			<li class="server" data-address="dynamodb.us-west-1.amazonaws.com">
+				<span>NA West : <span class="span-colored">( USA West )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+			<li class="server" data-address="dynamodb.sa-east-1.amazonaws.com">
+				<span>SA : <span class="span-colored">( South America brazil )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+			<li class="server" data-address="dynamodb.eu-north-1.amazonaws.com">
+				<span>EU North : <span class="span-colored">( Europe North )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+			<li class="server" data-address="dynamodb.eu-west-2.amazonaws.com">
+				<span>EU West : <span class="span-colored">( Europe West )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+			<li class="server" data-address="dynamodb.ap-northeast-1.amazonaws.com">
+				<span>Asia East : <span class="span-colored">( Japan )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+			<li class="server" data-address="dynamodb.ap-southeast-1.amazonaws.com">
+				<span>SEA : <span class="span-colored">( SEA Singapore )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+				<li class="server" data-address="dynamodb.ap-southeast-2.amazonaws.com">
+				<span>OCE : <span class="span-colored">( Australia East )</span></span>
+				<span class="ping-time ping">Loading...</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+const serverElements = [];
+
+function pingServer(address, element) {
+    const xhr = new XMLHttpRequest();
+    const start = Date.now();
+
+    xhr.open('GET', `https://${address}/ping`, true);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+            const end = Date.now();
+            const pingTime = xhr.status === 200 ? end - start : 'unreachable';
+            const pingElement = element.querySelector('.ping');
+            pingElement.innerHTML = pingTime !== 'unreachable' ? pingTime + ' ms' : 'unreachable';
+
+            pingElement.classList.remove('ping-green', 'ping-yellow', 'ping-orange', 'ping-red');
+
+            if (pingTime !== 'unreachable') {
+                pingElement.classList.add(getPingClass(pingTime));
+            }
+
+            serverElements.push({ element, pingTime: pingTime === 'unreachable' ? Infinity : pingTime });
+            if (serverElements.length === document.querySelectorAll('.server').length) {
+                serverElements.sort((a, b) => a.pingTime - b.pingTime);
+                const ul = document.querySelector('.servers ul');
+                serverElements.forEach(({ element }) => ul.appendChild(element));
+				getBestPing(serverElements);
+            }
+        }
+    };
+    xhr.send();
+}
+
+function getPingClass(ping) {
+    if (ping < 100) {
+        return 'ping-green';
+    } else if (ping < 200) {
+        return 'ping-yellow';
+    } else if (ping < 300) {
+        return 'ping-orange';
+    } else {
+        return 'ping-red';
+    }
+}
+
+function startPinging() {
+    const servers = document.querySelectorAll('.server');
+    serverElements.length = 0; // Clear previous results
+	document.getElementById('bestName').innerHTML = "Loading...";
+	document.getElementById('bestPing').innerHTML = "Loading...";
+	document.getElementById('bestPing').classList = "";
+    servers.forEach(element => {
+        const address = element.getAttribute('data-address');
+        pingServer(address, element);
+    });
+}
+
+function getBestPing(array) {
+	var firstArrayEntry = serverElements[0];
+	var bestPingTime = firstArrayEntry['pingTime'];
+	var bestPingTimeServerName = firstArrayEntry['element'].childNodes[1].innerText;
+	document.getElementById('bestPing').classList.add(getPingClass(bestPingTime));
+	document.getElementById('bestName').innerHTML = bestPingTimeServerName;
+	document.getElementById('bestPing').innerHTML = bestPingTime;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    startPinging();
+    setInterval(startPinging, 3000);
+});
+</script>
